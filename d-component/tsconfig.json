@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6",
+    "sourceMap": true,
+    "jsx": "preserve",
+    "declaration": true,
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["./package/*"],
+      "*": ["*"]
+    },
+    "moduleResolution": "node"
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}

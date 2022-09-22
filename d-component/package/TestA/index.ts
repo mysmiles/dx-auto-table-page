@@ -1,4 +1,4 @@
-import TestA from './src/TestA.vue';
+import TestA from './src/TestA';
 export {
   TestA
 }
