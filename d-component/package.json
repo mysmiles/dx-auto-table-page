@@ -9,9 +9,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vitejs/plugin-vue-jsx": "^2.0.1",
+    "d-async-validate-regexp": "^1.0.0",
     "element-plus": "^2.2.12",
-    "vue": "^3.2.37",
-    "d-async-validate-regexp": "^1.0.0"
+    "vue": "^3.2.37"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^3.0.0",

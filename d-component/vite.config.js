@@ -1,13 +1,12 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import vueJsx from '@vitejs/plugin-vue-jsx'
 
-// https://vitejs.dev/config/
 export default defineConfig({
-
   // 打包配置
   build: {
     lib: {
-      entry:  'src/packages/index.ts', // 设置入口文件
+      entry:  'src/main.js', // 设置入口文件
       name: 'vite-lib', // 起个名字，安装、引入用
       fileName: (format) => `vite-lib.${format}.js` // 打包后的文件名
     },
@@ -24,12 +23,12 @@ export default defineConfig({
       }
     }
   },
-  plugins: [vue()],
+  plugins: [vue(), vueJsx({})],
   css: {
     preprocessorOptions: {
       less: {
         javascriptEnabled: true,
-        additionalData: '@import "./src/packages/index.less";',
+        additionalData: '@import "./package/index.less";',
       }
     }
   }

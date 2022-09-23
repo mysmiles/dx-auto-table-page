@@ -1,13 +1,17 @@
 import type {App} from "vue";
-import {TestA} from "./testA";
-import './index.less';
+import { tablePagination } from "./TestA";
+import '../package/index.less';
 
 
-const components: any[] = [TestA];
+const components: any[] = [tablePagination];
 const install = (app: App) => {
-  components.forEach(component => app.component((component.name, component)))
+  components.map(component => {
+    console.log(component);
+    app.component(component.name, component)
+  })
 }
-export {TestA}
+
+export {tablePagination}
 export default {
   install,
   ...components

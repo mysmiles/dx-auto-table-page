@@ -1,9 +1,10 @@
 import { defineComponent, ref, watch, onMounted } from 'vue';
-import T from 'element-plus/lib/components/table'
+import T from 'element-plus/lib/components/table/src/table'
+import { PaginationProps } from 'element-plus/lib/components/pagination/src/pagination'
 
 export default defineComponent({
   name: 'tablePagination',
-  props: Object.assign({}, T.props, {
+  props: Object.assign({}, T.prop, {
     pagination: {
       type: [Object, Boolean],
       default: true
@@ -16,7 +17,7 @@ export default defineComponent({
     },
     dataSource: {
       type: Function,
-      required: true
+      // required: true
     },
     currentPage: {
       type: Number,
@@ -33,8 +34,18 @@ export default defineComponent({
   }),
   setup(props) {
     let localPagination: object | boolean = ref(false)
-     watch(props.pagination, (val: object | boolean) => {
+     watch(props.pagination, (val: PaginationProps | boolean) => {
        localPagination = val
     })
+    localPagination = ['auto', true].includes(props.showPagination) && Object.assign({}, localPagination, {
+      currentPage: (localPagination as PaginationProps).currentPage,
+      pageSize: props.pageSize
+    }) || false
+
+    return () => {
+      return (
+          <div>111</div>
+      )
+    }
   },
 })

@@ -1,4 +1,4 @@
-import TestA from './src/TestA';
+import tablePagination from './src/tablePagination';
 export {
-  TestA
+  tablePagination
 }
