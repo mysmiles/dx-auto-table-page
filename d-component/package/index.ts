@@ -6,7 +6,6 @@ import '../package/index.less';
 const components: any[] = [tablePagination];
 const install = (app: App) => {
   components.map(component => {
-    console.log(component);
     app.component(component.name, component)
   })
 }
